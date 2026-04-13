@@ -17,17 +17,17 @@ Replace this paragraph with your own summary of what your version does.
 
 ## How The System Works
 
-Explain your design in plain language.
+This recommender uses song metadata such as genre, mood, energy, tempo, valence, danceability, and acousticness together with a user taste profile. Each song is scored by comparing its genre and mood to the user’s preferences and by measuring how close its numeric values are to the user's desired energy, tempo, and emotional feel. Songs receive higher scores when they match the preferred style and when their energy, tempo, and valence are near the target values. The system ranks all songs by score and returns the top recommendations.
 
-Some prompts to answer:
+The scoring rule combines:
+- categorical matches for genre and mood,
+- distance-based similarity for numerical features,
+- and optional refinements for danceability and acousticness.
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
-
-You can include a simple diagram or bullet list if helpful.
+Potential limitations:
+- The system may over-prioritize genre, so it could miss songs that fit the mood but are in a different style.
+- It cannot understand lyrics, song structure, or artist popularity.
+- It works best on small, structured catalogs like this dataset, not large streaming catalogs.
 
 ---
 
@@ -208,4 +208,10 @@ A few sentences about what you learned:
 - What surprised you about how your system behaved
 - How did building this change how you think about real music recommenders
 - Where do you think human judgment still matters, even if the model seems "smart"
+
+## Phase 3 Terminal Screenshot
+
+![Phase 3 Terminal Screenshot](/phase%203.png)
+
+
 
