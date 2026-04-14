@@ -74,6 +74,9 @@ Use this section to document the experiments you ran. For example:
 - What happened when you added tempo or valence to the score
 - How did your system behave for different types of users
 
+![Phase 3 Screenshot](<phase 3.png>)
+![User Profile 1](<user profile 1.png>)
+![User Profile 2](<user profile 2.png>)
 ---
 
 ## Limitations and Risks
@@ -101,6 +104,7 @@ Write 1 to 2 paragraphs here about what you learned:
 - about how recommenders turn data into predictions
 - about where bias or unfairness could show up in systems like this
 
+I learned that a recommendation score is really just a way to compare how well each song matches a user's stated taste. In this system, songs are ranked by genre, mood, and energy similarity, so the highest-scoring songs are the ones that fit those preferences best. I also saw that the model can be biased by its small dataset and by the weights in the scoring rule, which can make some styles appear more often than others.
 
 ---
 
@@ -209,9 +213,7 @@ A few sentences about what you learned:
 - How did building this change how you think about real music recommenders
 - Where do you think human judgment still matters, even if the model seems "smart"
 
-## Phase 3 Terminal Screenshot
 
-![Phase 3 Terminal Screenshot](/phase%203.png)
 
 
 

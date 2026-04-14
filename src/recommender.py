@@ -85,19 +85,21 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
     score = 0.0
     reasons: List[str] = []
 
-    # Reward exact genre matches.
+    # Reward exact genre matches, but reduce the weight slightly for this experiment.
+    # This lets energy similarity play a larger role in the final ranking.
     if song["genre"] == user_prefs["favorite_genre"]:
-        score += 2.0
-        reasons.append("genre match (+2.0)")
+        score += 1.0
+        reasons.append("genre match (+1.0)")
 
     # Reward exact mood matches.
     if song["mood"] == user_prefs["favorite_mood"]:
         score += 1.0
         reasons.append("mood match (+1.0)")
 
-    # Reward energy values that are close to the user's target energy.
+    # Increase the energy influence so it matters about twice as much as before.
+    # The score still stays non-negative and is easier to compare with genre/mood.
     energy_diff = abs(song["energy"] - user_prefs["target_energy"])
-    energy_score = max(0.0, 2.0 - energy_diff * 2.0)
+    energy_score = max(0.0, 4.0 - energy_diff * 4.0)
     score += energy_score
     reasons.append(f"energy close match (+{energy_score:.1f})")
 
