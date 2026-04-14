@@ -77,6 +77,8 @@ Use this section to document the experiments you ran. For example:
 ![Phase 3 Screenshot](<phase 3.png>)
 ![User Profile 1](<user profile 1.png>)
 ![User Profile 2](<user profile 2.png>)
+
+The different user profiles produced different top songs because the system scores each song by how well it matches the requested genre, mood, and energy. For example, the high-energy pop profile favored upbeat pop songs, while the chill lofi profile shifted toward slower, lower-energy tracks. The intense rock profile selected songs with stronger energy and intensity, and the edge cases showed how the model can still choose high-energy songs even when the mood preference is sad or very narrow.
 ---
 
 ## Limitations and Risks
